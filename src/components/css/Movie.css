@@ -1,0 +1,46 @@
+.movie-desc-top {
+  /* background-image: url(../images/maanadu/maanadu_poster.jpg); */
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.movie-desc-top ::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: -1;
+}
+
+.movie-detail {
+  position: relative;
+  color: white;
+  z-index: 1;
+}
+
+.movie-desc-top button {
+  background-color: rgb(248, 68, 100);
+  padding: 15px 60px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+  margin-top: 20px;
+}
+
+.cast-crew {
+  margin-top: 50px;
+}
+
+.cast-crew img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}

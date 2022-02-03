@@ -1,0 +1,18 @@
+.main-content {
+  display: flex;
+}
+
+.form-content {
+  margin: auto;
+  margin-top: 70px;
+}
+
+input {
+  width: 345px;
+  padding: 5px 10px;
+}
+
+.expiry {
+  width: 100px;
+  padding: 10px 10px;
+}
