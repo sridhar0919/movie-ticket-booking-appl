@@ -56,7 +56,11 @@ export default function Seatbooking() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              setNoOfSeats(parseInt(e.target[0].value));
+              if (Number.isInteger(parseInt(e.target[0].value)) == false) {
+                toast.warning('Enter valid seat counts!!');
+              } else {
+                setNoOfSeats(parseInt(e.target[0].value));
+              }
             }}
           >
             <div>

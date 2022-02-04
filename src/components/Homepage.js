@@ -2,12 +2,23 @@ import React from 'react';
 import Navbar from './Navbar';
 import homeImage from './images/1640756827751_1633590513692_moviemunchies_webshowcase_1240x300_7oct.jpg';
 import Footer from './Footer';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 export default function Homepage() {
   const navigate = useNavigate();
 
-  const handleMovieClick = (e) => {};
+  const handleMovieClick = (movie1) => {
+    axios
+      .post('http://localhost:4000/add-movie', {
+        movie: movie1,
+      })
+      .then((res) => {
+        console.log(movie1);
+        navigate('/movie');
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div>
       <Navbar />
@@ -21,7 +32,10 @@ export default function Homepage() {
             <a
               href="/movie"
               style={{ textDecoration: 'none', color: 'black' }}
-              onClick={handleMovieClick}
+              onClick={(e) => {
+                e.preventDefault();
+                handleMovieClick('Maanadu');
+              }}
             >
               <img
                 src={require('./images/movie_poster3.jpg')}
@@ -35,7 +49,14 @@ export default function Homepage() {
             </a>
           </div>
           <div class="card" style={{ width: '220px' }}>
-            <a href="/movie" style={{ textDecoration: 'none', color: 'black' }}>
+            <a
+              href="/movie"
+              style={{ textDecoration: 'none', color: 'black' }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleMovieClick('Rocky');
+              }}
+            >
               <img
                 src={require('./images/movie_poster2.jpg')}
                 class="card-img-top"
@@ -48,7 +69,14 @@ export default function Homepage() {
             </a>
           </div>
           <div class="card" style={{ width: '220px' }}>
-            <a href="/movie" style={{ textDecoration: 'none', color: 'black' }}>
+            <a
+              href="/movie"
+              style={{ textDecoration: 'none', color: 'black' }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleMovieClick('Pushpa');
+              }}
+            >
               <img
                 src={require('./images/movie_poster4.jpg')}
                 class="card-img-top"
@@ -61,7 +89,14 @@ export default function Homepage() {
             </a>
           </div>
           <div class="card" style={{ width: '220px' }}>
-            <a href="/movie" style={{ textDecoration: 'none', color: 'black' }}>
+            <a
+              href="/movie"
+              style={{ textDecoration: 'none', color: 'black' }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleMovieClick('83');
+              }}
+            >
               <img
                 src={require('./images/movie_poster5.jpg')}
                 class="card-img-top"
@@ -74,7 +109,14 @@ export default function Homepage() {
             </a>
           </div>
           <div class="card" style={{ width: '220px' }}>
-            <a href="/movie" style={{ textDecoration: 'none', color: 'black' }}>
+            <a
+              href="/movie"
+              style={{ textDecoration: 'none', color: 'black' }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleMovieClick('Bachelor');
+              }}
+            >
               <img
                 src={require('./images/movie_poster1.jpg')}
                 class="card-img-top"
