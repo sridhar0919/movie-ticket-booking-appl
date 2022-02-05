@@ -7,13 +7,7 @@ var dotenv = require('dotenv');
 dotenv.config();
 const movie = require('./movie');
 
-mongoose.connect(
-  process.env.MONGOURL,
-  () => {
-    console.log('connected');
-  },
-  (e) => console.log(e)
-);
+mongoose.connect(process.env.MONGOURL);
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
