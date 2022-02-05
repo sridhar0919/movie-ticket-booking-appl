@@ -63,6 +63,7 @@ export default function Seatbooking() {
               }
             }}
           >
+            <h4 className="mb-4">BOOK YOUR TICKETS</h4>
             <div>
               <input
                 type="text"

@@ -11,33 +11,37 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Movie() {
   const navigate = useNavigate();
   const [movie, setMovie] = useState(null);
-  const [backgroundImage1, setBackgroundImage] = useState('');
+  const [background, setBackground] = useState(null);
 
   const getMovie = () => {
     axios
       .get('http://localhost:4000/get-movie')
       .then((res) => {
+        setBackground(res.data.data[0].poster_img_url);
         setMovie(res.data.data[0]);
-        setBackgroundImage(res.data.data[0].poster_img_url);
       })
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     getMovie();
-  });
+  }, []);
 
   return (
     <div>
       <ToastContainer />
-      <Navbar />
+      <div>
+        <nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand" style={{ color: 'white' }} href="/">
+            <i class="fas fa-chevron-left pt-2"></i>&nbsp;&nbsp;Back to Home
+          </a>
+        </nav>
+      </div>
       {/* Movie Title */}
       {movie && (
         <div>
-          <div
-            className="movie-desc-top"
-            // style={{ backgroundImage: `url(${backgroundImg})` }}
-          >
+          {console.log(background)}
+          <div className="movie-desc-top">
             <div className="px-5 py-3 d-flex movie-detail">
               <div class="card" style={{ width: '220px' }}>
                 <img

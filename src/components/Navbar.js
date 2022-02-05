@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './css/Navbar.css';
 
 export default function Navbar() {
   const [movie, setMovie] = useState('');
@@ -24,23 +25,23 @@ export default function Navbar() {
   return (
     <div>
       <ToastContainer />
-      <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" style={{ color: 'white' }} href="/">
-          Bookshow
+      <nav className="navbar navbar-dark bg-dark">
+        <a className="navbar-brand" style={{ color: 'white' }} href="/">
+          <i className="fas fa-ticket-alt mr-2"></i>Bookshow
         </a>
-        <form class="form-inline">
+        <form className="form-inline">
           <input
-            class="form-control mr-sm-2"
+            className="form-control mr-sm-2"
             value={movie}
             onChange={(e) => {
               setMovie(e.target.value);
             }}
             type="search"
-            placeholder="Search"
+            placeholder="Enter movies"
             aria-label="Search"
           />
           <button
-            class="btn btn-outline-success my-2 my-sm-0"
+            className="search-button my-2 my-sm-0"
             type="submit"
             onClick={(e) => {
               e.preventDefault();
