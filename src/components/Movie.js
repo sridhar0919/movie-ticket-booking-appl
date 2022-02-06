@@ -6,7 +6,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import backgroundImage from './images/maanadu/maanadu_poster.jpg';
 
 export default function Movie() {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ export default function Movie() {
 
   const getMovie = () => {
     axios
-      .get('http://localhost:4000/get-movie')
+      .get('https://movie-ticket-applapi.herokuapp.com/get-movie')
       .then((res) => {
         setBackground(res.data.data[0].poster_img_url);
         setMovie(res.data.data[0]);

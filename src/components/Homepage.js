@@ -10,7 +10,7 @@ export default function Homepage() {
 
   const handleMovieClick = (movie1) => {
     axios
-      .post('http://localhost:4000/add-movie', {
+      .post('https://movie-ticket-applapi.herokuapp.com/add-movie', {
         movie: movie1,
       })
       .then((res) => {

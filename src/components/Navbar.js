@@ -10,7 +10,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const handleMovieClick = () => {
     axios
-      .post('http://localhost:4000/add-movie', {
+      .post('https://movie-ticket-applapi.herokuapp.com/add-movie', {
         movie: movie,
       })
       .then((res) => {
