@@ -113,20 +113,20 @@
     height: 120px;
     width: 120px;
     border-radius: 50%;
-    margin-left: 20px;
-  }
-
-  .cast-name {
-    margin-left: 5px;
-    font-size: 16px;
+    margin-left: 50px;
   }
 
   .cast-name1 {
-    margin-left: 50px;
     font-size: 16px;
+    text-align: center;
   }
 
   .cast-section div:nth-child(1) img {
-    margin-left: 60px;
+    margin-left: 92px;
+  }
+
+  .cast-name {
+    font-size: 16px;
+    text-align: center;
   }
 }
