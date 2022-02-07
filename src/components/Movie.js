@@ -42,15 +42,14 @@ export default function Movie() {
           {console.log(background)}
           <div className="movie-desc-top">
             <div className="px-5 py-3 d-flex movie-detail">
-              <div class="card" style={{ width: '220px' }}>
+              <div class="card card1">
                 <img
                   src={require(`${movie.thumbnail_img_url}`)}
-                  class="card-img-top"
+                  class="card-img-top thumbnail-img"
                   alt="..."
-                  height="370px"
                 />
               </div>
-              <div className="ml-3 py-5">
+              <div className="ml-3 py-5 content-div">
                 <h1 className="display-1">{movie.movie_name}</h1>
                 <p className="mt-3 font-weight-bold">
                   {movie.movie_duration} | {movie.genre}
@@ -71,14 +70,14 @@ export default function Movie() {
             </div>
           </div>
           {/* Movie crew */}
-          <div className="px-5">
+          <div className="px-5 about-section">
             <div>
               <h3 className="font-weight-bold">About the movie</h3>
               <p className="mt-3">{movie.about_movie}</p>
             </div>
             <div className="cast-crew">
               <h3 className="font-weight-bold">Cast & Crew</h3>
-              <div className="d-flex mt-4">
+              <div className="d-flex mt-4 cast-section">
                 <div class="card" style={{ border: 'none' }}>
                   <img
                     src={require(`${movie.cast_img_urls[0]}`)}
@@ -86,7 +85,7 @@ export default function Movie() {
                     alt="..."
                   />
                   <div class="card-body">
-                    <h5 class="card-title">{movie.cast[0]}</h5>
+                    <h5 class="card-title cast-name1">{movie.cast[0]}</h5>
                   </div>
                 </div>
                 <div class="card ml-5" style={{ border: 'none' }}>
@@ -96,7 +95,7 @@ export default function Movie() {
                     alt="..."
                   />
                   <div class="card-body">
-                    <h5 class="card-title">{movie.cast[1]}</h5>
+                    <h5 class="card-title cast-name">{movie.cast[1]}</h5>
                   </div>
                 </div>
                 <div class="card ml-5" style={{ border: 'none' }}>
@@ -106,7 +105,7 @@ export default function Movie() {
                     alt="..."
                   />
                   <div class="card-body">
-                    <h5 class="card-title">{movie.cast[2]}</h5>
+                    <h5 class="card-title cast-name">{movie.cast[2]}</h5>
                   </div>
                 </div>
                 <div class="card ml-5" style={{ border: 'none' }}>
@@ -116,7 +115,7 @@ export default function Movie() {
                     alt="..."
                   />
                   <div class="card-body">
-                    <h5 class="card-title">{movie.cast[3]}</h5>
+                    <h5 class="card-title cast-name">{movie.cast[3]}</h5>
                   </div>
                 </div>
               </div>

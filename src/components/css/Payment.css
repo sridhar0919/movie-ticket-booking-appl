@@ -16,3 +16,20 @@ input {
   width: 100px;
   padding: 10px 10px;
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .form-content {
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+  }
+  input {
+    width: 280px;
+    padding: 5px 10px;
+  }
+
+  .expiry {
+    width: 80px;
+    padding: 5px 5px;
+  }
+}

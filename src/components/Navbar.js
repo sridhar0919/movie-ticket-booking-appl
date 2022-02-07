@@ -31,7 +31,7 @@ export default function Navbar() {
         </a>
         <form className="form-inline">
           <input
-            className="form-control mr-sm-2"
+            className="form-control mr-sm-2 home-search"
             value={movie}
             onChange={(e) => {
               setMovie(e.target.value);

@@ -9,19 +9,19 @@ import { useNavigate } from 'react-router-dom';
 export default function Seatbooking() {
   const navigate = useNavigate();
   const seatsTop = [
-    { row: 'A', seat: [1, 2, 3, 4, 5, '', '', '', 6, 7, 8, 9, 10, 11, 12] },
-    { row: 'B', seat: [1, 2, 3, 4, 5, '', '', '', 6, 7, 8, 9, 10, 11, 12] },
-    { row: 'C', seat: [1, 2, 3, 4, 5, '', '', '', 6, 7, 8, 9, 10, 11, 12] },
-    { row: 'D', seat: [1, 2, 3, 4, 5, '', '', '', 6, 7, 8, 9, 10, 11, 12] },
-    { row: 'E', seat: [1, 2, 3, 4, 5, '', '', '', 6, 7, 8, 9, 10, 11, 12] },
+    { row: 'A', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
+    { row: 'B', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
+    { row: 'C', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
+    { row: 'D', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
+    { row: 'E', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
   ];
 
   const seatsBottom = [
-    { row: 'F', seat: [1, 2, 3, 4, 5, '', '', '', 6, 7, 8, 9, 10, 11, 12] },
-    { row: 'G', seat: [1, 2, 3, 4, 5, '', '', '', 6, 7, 8, 9, 10, 11, 12] },
-    { row: 'H', seat: [1, 2, 3, 4, 5, '', '', '', 6, 7, 8, 9, 10, 11, 12] },
-    { row: 'I', seat: [1, 2, 3, 4, 5, '', '', '', 6, 7, 8, 9, 10, 11, 12] },
-    { row: 'J', seat: [1, 2, 3, 4, 5, '', '', '', 6, 7, 8, 9, 10, 11, 12] },
+    { row: 'F', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
+    { row: 'G', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
+    { row: 'H', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
+    { row: 'I', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
+    { row: 'J', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
   ];
   const [noOfSeats, setNoOfSeats] = useState(-1);
   const [seatNo, setSeatNo] = useState([]);
@@ -85,13 +85,13 @@ export default function Seatbooking() {
           </div>
         )}
 
-        <table class="table table-borderless">
+        <table>
           <tbody>
             {/* Top 5 seats */}
             {seatsTop.map((value, index) => {
               return (
                 <tr>
-                  <th scope="row" className="pr-5">
+                  <th scope="row" className="seat-letter">
                     {value.row}
                   </th>
                   {value.seat.map((value1, index) => {
@@ -135,7 +135,7 @@ export default function Seatbooking() {
             {seatsBottom.map((value, index) => {
               return (
                 <tr>
-                  <th scope="row" className="pr-5">
+                  <th scope="row" className="seat-letter">
                     {value.row}
                   </th>
                   {value.seat.map((value1, index) => {

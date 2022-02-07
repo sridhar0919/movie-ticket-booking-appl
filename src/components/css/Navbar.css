@@ -7,3 +7,10 @@
   color: white;
   margin-top: 20px;
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .home-search {
+    max-width: 150px;
+    margin-right: 10px;
+  }
+}

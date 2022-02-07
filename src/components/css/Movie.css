@@ -43,3 +43,67 @@
   width: 120px;
   border-radius: 50%;
 }
+
+.thumbnail-img {
+  height: 370px;
+}
+
+.card1 {
+  width: 220px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .movie-detail {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card1 {
+    width: 170px;
+    height: 80px;
+    margin-left: 20px;
+  }
+
+  .content-div {
+    margin-top: -140px;
+  }
+
+  .movie-desc-top button {
+    background-color: rgb(248, 68, 100);
+    padding: 5px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+  }
+
+  .about-section {
+    margin-top: 230px;
+  }
+
+  .cast-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cast-crew img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+
+  .cast-section div:nth-child(1) img {
+    margin-left: 40px;
+  }
+
+  .cast-name {
+    margin-left: -10px;
+    font-size: 16px;
+  }
+
+  .cast-name1 {
+    margin-left: 25px;
+    font-size: 16px;
+  }
+}

@@ -9,7 +9,7 @@ export default function Payment() {
     <div>
       <Navbar />
       <div className="main-content">
-        <ToastContainer />/
+        <ToastContainer />
         <form
           className="form-content"
           onSubmit={(e) => {

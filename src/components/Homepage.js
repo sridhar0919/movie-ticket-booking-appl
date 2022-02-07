@@ -4,6 +4,7 @@ import homeImage from './images/1640756827751_1633590513692_moviemunchies_websho
 import Footer from './Footer';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './css/Homepage_mobile.css';
 
 export default function Homepage() {
   const navigate = useNavigate();
@@ -27,8 +28,8 @@ export default function Homepage() {
       </div>
       <section className="px-5 py-2">
         <h3 className="mt-5 mb-4">Recommended movies</h3>
-        <div className="d-flex justify-content-around">
-          <div class="card" style={{ width: '220px' }}>
+        <div className="d-flex justify-content-around movie-card">
+          <div class="card card1">
             <a
               href="/movie"
               style={{ textDecoration: 'none', color: 'black' }}
@@ -48,7 +49,7 @@ export default function Homepage() {
               </div>
             </a>
           </div>
-          <div class="card" style={{ width: '220px' }}>
+          <div class="card card1">
             <a
               href="/movie"
               style={{ textDecoration: 'none', color: 'black' }}
@@ -68,7 +69,7 @@ export default function Homepage() {
               </div>
             </a>
           </div>
-          <div class="card" style={{ width: '220px' }}>
+          <div class="card card1">
             <a
               href="/movie"
               style={{ textDecoration: 'none', color: 'black' }}
@@ -88,7 +89,7 @@ export default function Homepage() {
               </div>
             </a>
           </div>
-          <div class="card" style={{ width: '220px' }}>
+          <div class="card card1">
             <a
               href="/movie"
               style={{ textDecoration: 'none', color: 'black' }}
@@ -108,7 +109,7 @@ export default function Homepage() {
               </div>
             </a>
           </div>
-          <div class="card" style={{ width: '220px' }}>
+          <div class="card card1">
             <a
               href="/movie"
               style={{ textDecoration: 'none', color: 'black' }}
