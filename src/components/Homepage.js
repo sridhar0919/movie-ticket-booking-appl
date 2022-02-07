@@ -27,7 +27,7 @@ export default function Homepage() {
         <img src={homeImage} alt="First Image" className="w-100" />
       </div>
       <section className="px-5 py-2">
-        <h3 className="mt-5 mb-4">Recommended movies</h3>
+        <h3 className="mt-5 mb-4 title-top">Recommended movies</h3>
         <div className="d-flex justify-content-around movie-card">
           <div class="card card1">
             <a

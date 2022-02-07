@@ -81,7 +81,7 @@ export default function Movie() {
                 <div class="card" style={{ border: 'none' }}>
                   <img
                     src={require(`${movie.cast_img_urls[0]}`)}
-                    class="card-img-top"
+                    class="card-img-top card-img1"
                     alt="..."
                   />
                   <div class="card-body">

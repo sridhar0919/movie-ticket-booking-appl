@@ -249,3 +249,21 @@ table th {
     padding-right: 10px;
   }
 }
+
+@media (min-width: 375px) and (max-width: 424px) {
+  .main-table {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 40px;
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .main-table {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    padding-right: 10px;
+  }
+}

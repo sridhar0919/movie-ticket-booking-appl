@@ -18,4 +18,33 @@
   .card1 img {
     height: 250px;
   }
+
+  .title-top {
+    margin-left: -18px;
+    /* font-size: 20px; */
+  }
+}
+
+@media (min-width: 375px) and (max-width: 424px) {
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0 25px;
+  }
+
+  .title-top {
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+  }
+
+  .title-top {
+    margin-left: 15px;
+  }
 }

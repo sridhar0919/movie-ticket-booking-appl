@@ -107,3 +107,26 @@
     font-size: 16px;
   }
 }
+
+@media (min-width: 375px) and (max-width: 424px) {
+  .cast-crew img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-left: 20px;
+  }
+
+  .cast-name {
+    margin-left: 5px;
+    font-size: 16px;
+  }
+
+  .cast-name1 {
+    margin-left: 50px;
+    font-size: 16px;
+  }
+
+  .cast-section div:nth-child(1) img {
+    margin-left: 60px;
+  }
+}
