@@ -46,7 +46,13 @@ export default function Seatbooking() {
       <ToastContainer />
       <div>
         <nav class="navbar navbar-dark bg-dark">
-          <a class="navbar-brand" style={{ color: 'white' }} href="/movie">
+          <a
+            class="navbar-brand"
+            style={{ color: 'white', cursor: 'pointer' }}
+            onClick={(e) => {
+              navigate('/movie');
+            }}
+          >
             <i class="fas fa-chevron-left pt-2"></i>&nbsp;&nbsp;Back to Movies
           </a>
         </nav>
