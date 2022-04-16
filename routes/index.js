@@ -6,6 +6,11 @@ const { currentMovie } = require('./movie');
 var dotenv = require('dotenv');
 dotenv.config();
 const movie = require('./movie');
+const Razorpay = require('razorpay');
+var instance = new Razorpay({
+  key_id: 'rzp_test_UOodhqUZ3buSCG',
+  key_secret: 'qoq3b8jcPmIKISg3zmv09P9Z',
+});
 
 mongoose.connect(process.env.MONGOURL);
 
@@ -85,6 +90,20 @@ router.get('/get-movie', async (req, res) => {
   res.send({
     data: movie[0].movie,
     message: 'Movie found',
+  });
+});
+
+// create payment order
+router.post('/create/orderId', async (req, res) => {
+  console.log('create orderId request', req.body);
+  var options = {
+    amount: req.body.amount,
+    currency: 'INR',
+    receipt: 'rcp1',
+  };
+  instance.orders.create(options, function (err, order) {
+    console.log(order);
+    res.send({ orderId: order.id });
   });
 });
 
