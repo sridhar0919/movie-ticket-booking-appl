@@ -75,7 +75,7 @@ export default function Seatbooking() {
       .then((res) => {
         console.log(res.data.orderId);
         const options = {
-          key: 'rzp_test_UOodhqUZ3buSCG',
+          key: process.env.REACT_APP_RAZORPAY_KEY_ID,
           amount: ticketAmount * 100,
           currency: 'INR',
           name: 'Bookshow',
