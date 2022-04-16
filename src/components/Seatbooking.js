@@ -90,8 +90,8 @@ export default function Seatbooking() {
             navigate('/');
           },
           prefill: {
-            name: 'Gaurav Kumar',
-            email: 'gaurav.kumar@example.com',
+            name: 'Sridhar',
+            email: 'sridhar@example.com',
             contact: '9999999999',
           },
         };
