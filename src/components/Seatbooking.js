@@ -5,9 +5,26 @@ import Navbar from './Navbar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+function loadScript(src) {
+  return new Promise((resolve) => {
+    const script = document.createElement('script');
+    script.src = src;
+
+    script.onload = () => {
+      resolve(true);
+    };
+    script.onerror = () => {
+      resolve(false);
+    };
+    document.body.appendChild(script);
+  });
+}
 
 export default function Seatbooking() {
   const navigate = useNavigate();
+
   const seatsTop = [
     { row: 'A', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
     { row: 'B', seat: [1, 2, 3, 4, 5, '', 6, 7, 8, 9, 10, 11, 12] },
@@ -26,6 +43,7 @@ export default function Seatbooking() {
   const [noOfSeats, setNoOfSeats] = useState(-1);
   const [seatNo, setSeatNo] = useState([]);
   const [selected, setSelected] = useState(0);
+  const [orderId, setOrderId] = useState(null);
 
   const handleSeatClick = (row, seat1) => {
     if (noOfSeats === -1) {
@@ -39,6 +57,47 @@ export default function Seatbooking() {
     } else if (seatNo.length >= noOfSeats && !seatNo.includes(row + seat1)) {
       toast.error('Seat selection limit exceeded!!!');
     }
+  };
+
+  const displayRazorPay = async (ticketAmount) => {
+    const res = await loadScript(
+      'https://checkout.razorpay.com/v1/checkout.js'
+    );
+    if (!res) {
+      alert('Razorpay SDK failed to load. Are you online?');
+      return;
+    }
+
+    axios
+      .post('http://localhost:4000/create/orderId', {
+        amount: ticketAmount * 100,
+      })
+      .then((res) => {
+        console.log(res.data.orderId);
+        const options = {
+          key: 'rzp_test_UOodhqUZ3buSCG',
+          amount: ticketAmount * 100,
+          currency: 'INR',
+          name: 'Bookshow',
+          description: 'Thank you for using bookshow!',
+          image: 'https://example.com/your_logo',
+          order_id: res.data.orderId,
+          handler: function (response) {
+            // alert(`response.razorpay_payment_id`);
+            alert('Ticket booked successfully');
+            // alert(response.razorpay_order_id);
+            // alert(response.razorpay_signature);
+            navigate('/');
+          },
+          prefill: {
+            name: 'Gaurav Kumar',
+            email: 'gaurav.kumar@example.com',
+            contact: '9999999999',
+          },
+        };
+        var paymentObject = new window.Razorpay(options);
+        paymentObject.open();
+      });
   };
 
   return (
@@ -172,13 +231,15 @@ export default function Seatbooking() {
         <h1>Screen this way</h1>
       </div>
       {noOfSeats !== -1 && seatNo.length > 0 ? (
-        <div
-          className="pop-up"
-          onClick={(e) => {
-            navigate('/payment');
-          }}
-        >
-          <button type="submit">Pay&nbsp;&nbsp;Rs.{seatNo.length * 150}</button>
+        <div className="pop-up">
+          <button
+            type="submit"
+            onClick={() => {
+              displayRazorPay(seatNo.length * 150);
+            }}
+          >
+            Pay&nbsp;&nbsp;Rs.{seatNo.length * 150}
+          </button>
         </div>
       ) : (
         <div></div>

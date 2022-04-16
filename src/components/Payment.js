@@ -14,7 +14,7 @@ export default function Payment() {
           className="form-content"
           onSubmit={(e) => {
             e.preventDefault();
-            toast.success('Ticket booked successfully');
+            // displayRazorPay();
           }}
         >
           <p>ITS A FAKE PAYMENT PAGE!! JUST FOR DEMO!!! </p>
