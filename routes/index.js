@@ -8,8 +8,8 @@ dotenv.config();
 const movie = require('./movie');
 const Razorpay = require('razorpay');
 var instance = new Razorpay({
-  key_id: 'rzp_test_UOodhqUZ3buSCG',
-  key_secret: 'qoq3b8jcPmIKISg3zmv09P9Z',
+  key_id: process.env.RAZORPAY_KEY_ID,
+  key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
 mongoose.connect(process.env.MONGOURL);
