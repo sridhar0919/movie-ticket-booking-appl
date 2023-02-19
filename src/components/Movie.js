@@ -14,7 +14,7 @@ export default function Movie() {
 
   const getMovie = () => {
     axios
-      .get('https://movie-ticket-applapi.herokuapp.com/get-movie')
+      .get('https://movie-ticket-appl.onrender.com/get-movie')
       .then((res) => {
         setBackground(res.data.data[0].poster_img_url);
         setMovie(res.data.data[0]);

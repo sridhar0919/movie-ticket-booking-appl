@@ -11,7 +11,7 @@ export default function Homepage() {
 
   const handleMovieClick = (movie1) => {
     axios
-      .post('https://movie-ticket-applapi.herokuapp.com/add-movie', {
+      .post('https://movie-ticket-appl.onrender.com/add-movie', {
         movie: movie1,
       })
       .then((res) => {

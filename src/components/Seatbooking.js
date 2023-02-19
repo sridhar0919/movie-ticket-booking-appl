@@ -69,7 +69,7 @@ export default function Seatbooking() {
     }
 
     axios
-      .post('https://movie-ticket-applapi.herokuapp.com/create/orderId', {
+      .post('https://movie-ticket-appl.onrender.com/create/orderId', {
         amount: ticketAmount * 100,
       })
       .then((res) => {
